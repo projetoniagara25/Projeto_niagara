@@ -1,0 +1,51 @@
+"use client";
+
+import React, { useEffect, useRef } from 'react';
+import { Loader } from '@googlemaps/js-api-loader';
+
+const API_KEY = "SUA_CHAVE_DE_API_DO_GOOGLE_MAPS";
+
+const GoogleMapsSection: React.FC = () => {
+    const mapRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (!mapRef.current) return;
+
+        const loader = new Loader({
+            apiKey: API_KEY,
+            version: 'weekly',
+        });
+
+        const mapOptions: google.maps.MapOptions = {
+            center: {
+                lat: -23.55052,  // Latitude do centro de São Paulo (Exemplo)
+                lng: -46.633308, // Longitude do centro de São Paulo (Exemplo)
+            },
+            zoom: 12,
+            mapId: 'MAPA_DA_NIAGARA', // Opcional: use um Map ID personalizado do Google Cloud
+        };
+
+        loader.load().then(() => {
+            // O mapa é renderizado no elemento referenciado
+            new google.maps.Map(mapRef.current!, mapOptions);
+        }).catch(error => {
+            console.error('Erro ao carregar a API do Google Maps:', error);
+        });
+    }, []);
+
+    return (
+        <section className="py-16">
+            <div className="container mx-auto px-4">
+                <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
+                    Encontre-nos no Mapa
+                </h2>
+                <div
+                    ref={mapRef}
+                    className="w-full h-[500px] rounded-lg shadow-lg"
+                />
+            </div>
+        </section>
+    );
+};
+
+export default GoogleMapsSection;
