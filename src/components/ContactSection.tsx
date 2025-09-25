@@ -1,12 +1,12 @@
 import React from 'react';
-// Importe os ícones do react-icons
+
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
-// Importe uma imagem para a seção de contato
-import contactImage from '../assets/images/Company-logo.svg'; 
-// Lembre-se de colocar uma imagem no caminho `src/assets/images/`
+
+import contactImage from '../assets/images/Niagara_Logo_2.jpg'; 
+
 
 const ContactSection: React.FC = () => {
-  // Número de telefone e e-mail para contato
+
   const whatsappNumber = '5511999999999';
   const emailAddress = 'contato@niagaralindoya.com.br';
 
@@ -15,7 +15,7 @@ const ContactSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Lado esquerdo: Informações de Contato */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left m-8">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Fale Conosco
             </h2>
@@ -23,7 +23,7 @@ const ContactSection: React.FC = () => {
               Entre em contato com nossa equipe para tirar dúvidas, fazer orçamentos ou solicitar mais informações sobre nossos produtos.
             </p>
             
-            {/* Contato WhatsApp */}
+  
             <div className="flex items-center space-x-4 mb-4">
               <FaWhatsapp className="text-3xl text-green-500" />
               <div>
@@ -36,7 +36,7 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Contato E-mail */}
+
             <div className="flex items-center space-x-4 mb-8">
               <FaEnvelope className="text-3xl text-gray-500" />
               <div>
@@ -49,7 +49,7 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Botão de Ação */}
+    
             <a
               href={`https://wa.me/${whatsappNumber}`}
               target="_blank"
@@ -60,7 +60,7 @@ const ContactSection: React.FC = () => {
             </a>
           </div>
 
-          {/* Lado direito: Imagem */}
+  
           <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
             <img 
               src={contactImage.src} 

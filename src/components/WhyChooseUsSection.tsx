@@ -1,10 +1,11 @@
 import React from 'react';
+import './WhyChooseUsSection.css'
 
 import { FaTruck, FaShieldAlt, FaHeadset } from 'react-icons/fa';
 
 const WhyChooseUsSection: React.FC = () => {
   return (
-    <section id='why-chose-us' className="bg-gray-100 py-16">
+    <section id='why-chose-us' className="section-whyChose py-16 h-[80vh]">
       <div className="container mx-auto px-4 text-center">
     
         <h2 className="text-4xl font-bold text-gray-800 mb-12">

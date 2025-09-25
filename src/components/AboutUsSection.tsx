@@ -1,6 +1,6 @@
 import React from 'react';
 
-import companyLogo from '../assets/images/Company-logo.svg'; 
+import companyLogo from '../assets/images/Niagara_Logo_1.jpg'; 
 
 const AboutUsSection: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const AboutUsSection: React.FC = () => {
         
         <div className="w-full md:w-1/2 flex justify-center">
           <img 
-            src={companyLogo} 
+            src = {companyLogo.src}
             alt="Logo da Empresa" 
             className="max-w-xs md:max-w-sm lg:max-w-md h-auto"
           />

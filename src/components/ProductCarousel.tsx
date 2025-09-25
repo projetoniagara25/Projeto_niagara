@@ -2,60 +2,60 @@
 
 import React, { useState } from 'react';
 import { FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import imagemTeste from '../assets/images/Company-logo.svg'
+import imagemTeste from '../assets/images/produto.webp'
 
 const products = [
   {
     id: 1,
-    image: imagemTeste,
+    image: imagemTeste.src,
     title: 'Nome do Produto 1',
     description: 'Uma descrição curta sobre o Produto 1. Aqui você pode destacar os principais benefícios ou características.',
   },
   {
     id: 2,
-    image: imagemTeste,
+    image: imagemTeste.src,
     title: 'Nome do Produto 2',
     description: 'Aqui temos a descrição do Produto 2, com informações importantes sobre suas funcionalidades.',
   },
   {
     id: 3,
-    image: imagemTeste,
+    image: imagemTeste.src,
     title: 'Nome do Produto 3',
     description: 'Este é o Produto 3. Ele foi feito para resolver o seu problema de [problema] de forma eficiente.',
   },
   {
     id: 4,
-    image: imagemTeste,
+    image: imagemTeste.src,
     title: 'Nome do Produto 4',
     description: 'Uma descrição detalhada do Produto 4. Ótimo para quem busca [qualidade].',
   },
   {
     id: 5,
-    image: imagemTeste,
+    image: imagemTeste.src,
     title: 'Nome do Produto 5',
     description: 'Descrição do Produto 5. Perfeito para [uso específico] e [benefício].',
   },
   {
     id: 6,
-    image: imagemTeste,
+    image: imagemTeste.src,
     title: 'Nome do Produto 6',
     description: 'Mais um produto incrível para sua coleção!',
   },
   {
     id: 7,
-    image: imagemTeste,
+    image: imagemTeste.src,
     title: 'Nome do Produto 7',
     description: 'O melhor produto da categoria 7!',
   },
   {
     id: 8,
-    image: imagemTeste,
+    image: imagemTeste.src,
     title: 'Nome do Produto 8',
     description: 'Experimente a inovação com este produto.',
   },
   {
     id: 9,
-    image: imagemTeste,
+    image: imagemTeste.src,
     title: 'Nome do Produto 9',
     description: 'Um produto essencial para o seu dia a dia.',
   },
@@ -75,7 +75,7 @@ const ProductCarousel: React.FC = () => {
   };
 
   return (
-    <section className="py-16 relative">
+    <section id='products' className="py-16 relative">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
           Nossos Produtos

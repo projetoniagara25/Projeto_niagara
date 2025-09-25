@@ -1,14 +1,14 @@
-// src/components/MainSection.tsx
-
+import './MainSection.css'
+import imgBackground from '../assets/images/background-agua.jpg'
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa'; // Ícone do WhatsApp
 
 const MainSection: React.FC = () => {
   return (
-    <section className="bg-blue-50 py-24 min-h-screen-75 flex flex-col items-center justify-center text-center px-4">
-      <div className='flex flex-col justify-around items-center'>
+    <section className="main-section-area py-24 min-h-screen-75 flex flex-col items-center justify-center text-center px-4">
+      {/* <img src={imgBackground.src} alt="imagembackground" className='img-background' /> */}
+      <div className='area-info flex flex-col justify-around items-center'>
         <div className="flex flex-col items-center min-h-60 max-w-3xl">
-
           <h1 className="text-2xl md:text-2xl font-extrabold text-gray-800 leading-tight w-full mb-4 ">
             A MELHOR ÁGUA MINERAL ENTRGUE EM SÃO PAULO
           </h1>
