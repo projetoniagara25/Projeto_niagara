@@ -34,14 +34,14 @@ const GoogleMapsSection: React.FC = () => {
     }, []);
 
     return (
-        <section className="py-16">
-            <div className="container mx-auto px-4">
+        <section className="flex flex-col py-16 w-full">
+            <div className=" w-full container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
                     Encontre-nos no Mapa
                 </h2>
                 <div
                     ref={mapRef}
-                    className="w-full h-[500px] rounded-lg shadow-lg"
+                    className="w-[35rem] h-[400px] rounded-lg shadow-lg"
                 />
             </div>
         </section>

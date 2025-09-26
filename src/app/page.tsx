@@ -14,7 +14,7 @@ export default function Home() {
     <>
     <Header></Header>
 
-      <main className="flex flex-col h-max bg-gray-200 w-full">
+      <main className="flex flex-col h-max bg-gray-200 w-full min-w-[500px] ">
 
         <MainSlider></MainSlider>
         {/* <MainSection></MainSection> */}

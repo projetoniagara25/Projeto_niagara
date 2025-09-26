@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import imagemTeste from '../assets/images/produto.webp'
 import { useWindowSize } from '../hooks/useWindowSize'; 
+import Reveal from './Reveal';
 
 const products = [
   {
@@ -123,13 +124,15 @@ const ProductCarousel: React.FC = () => {
                         key={product.id}
                         className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 text-center"
                       >
-                        <img
+                        <Reveal><img
                           src={product.image}
                           alt={product.title}
                           className="w-full h-auto object-cover rounded mb-4"
-                        />
-                        <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h3>
+                        /></Reveal>
+                        <Reveal>
+                          <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h3>
                         <p className="text-sm text-gray-600 mb-4 flex-grow">{product.description}</p>
+                        </Reveal>
                         <button
                           className="hover:cursor-pointer w-[60%] buton-ask mt-auto flex items-center justify-center hover:scale-105 hover:shadow-xl bg-green-500 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                           onClick={() => window.open('https://api.whatsapp.com/send?phone=5511975147817&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20produto%3A%20' + product.title, '_blank')}

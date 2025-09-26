@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 
 import companyLogo from '../assets/images/Niagara_Logo_1.jpg';
@@ -27,12 +29,16 @@ const AboutUsSection: React.FC = () => {
                 Na Niagara Lindóya, nossa jornada começou em 2004 com uma visão clara: [descreva a visão ou missão inicial]. Desde então, temos nos dedicado a [mencione o que sua empresa faz ou o problema que resolve], sempre com o compromisso de [mencione um valor fundamental, como qualidade, inovação, etc.].
               </p>
             </Reveal>
-            <p>
+            <Reveal>
+              <p>
               Acreditamos que [fale sobre o que impulsiona a empresa, como o cliente, a equipe, a sustentabilidade]. Nosso time é formado por profissionais apaixonados e talentosos que trabalham incansavelmente para [mencione o objetivo atual, como superar expectativas, entregar soluções excepcionais].
             </p>
-            <p>
+            </Reveal>
+            <Reveal>
+              <p>
               Estamos orgulhosos do que construímos e empolgados com o futuro. Junte-se a nós nesta jornada e descubra a diferença que Niagara Lindóya pode fazer.
             </p>
+            </Reveal>
           </div>
         </div>
       </div>

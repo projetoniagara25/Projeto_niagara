@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gray-800 text-gray-300 py-12">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-6">
+      <div className="container mx-auto px-4 grid grid-cols-1 gap-3 md:grid-cols-3 sm:grid-cols-2">
         {/* 1. Ícone e Ano da Empresa */}
         <div className="flex flex-col items-start space-y-2">
           {/* Substitua o SVG ou o ícone do componente da sua empresa aqui */}

@@ -11,6 +11,7 @@ import background1 from '../assets/images/background-agua.jpg';
 import background2 from '../assets/images/sustentavel.jpg';
 import background3 from '../assets/images/entregarapida.jpg';
 import Link from 'next/link';
+import Reveal from './Reveal';
 
 // Estrutura dos slides
 const slides = [
@@ -138,20 +139,24 @@ const MainSlider: React.FC = () => {
                         <div className="relative z-10 text-white p-4 max-w-4xl">
 
                             {/* Mensagem Principal com Animação (apenas no primeiro slide) */}
-                            <h1
+                            <Reveal>
+                                <h1
                                 className={`text-4xl md:text-6xl font-extrabold leading-tight mb-4 transform transition-all duration-1000 ${(index === 0 || index === 1 || index === 2) && (currentSlide === 0 || currentSlide === 1 || currentSlide === 2) ? 'translate-y-[-6] opacity-100' : 'translate-y-8 opacity-0'
                                     }`}
                             >
                                 {slide.title}
                             </h1>
+                            </Reveal>
 
                             {/* Subtítulo */}
-                            <p
+                            <Reveal delay={500}>
+                                <p
                                 className={`text-lg md:text-2xl mb-12 transform transition-all duration-1000 delay-200 ${(index === 0 || index === 1 || index === 2) && (currentSlide === 0 || currentSlide === 1 || currentSlide === 2) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                                     }`}
                             >
                                 {slide.subtitle}
                             </p>
+                            </Reveal>
 
                             {/* Botão de Ação com Animação (apenas no primeiro slide) */}
                             {slide.isConversionSlide && (
@@ -190,13 +195,19 @@ const MainSlider: React.FC = () => {
 
             {/* Botões de Navegação (Setas) */}
             <button
-                className="hover:cursor-pointer absolute top-1/2 left-4 transform -translate-y-1/2 text-white p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 z-20 transition-colors"
+                className="hover:cursor-pointer absolute top-1/2 left-4 
+                transform -translate-y-1/2 text-white p-3 rounded-full
+                 bg-black bg-opacity-50 hover:bg-opacity-75 z-20 transition-colors
+                 sm:mt-[4rem]"
                 onClick={() => handleUserInteraction((currentSlide - 1 + totalSlides) % totalSlides)} // Usa a lógica handlePrev, mas com a pausa
             >
                 <FaArrowLeft className="text-2xl" />
             </button>
             <button
-                className="hover:cursor-pointer absolute top-1/2 right-4 transform -translate-y-1/2 text-white p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 z-20 transition-colors"
+                className="hover:cursor-pointer absolute top-1/2 right-4
+                 transform -translate-y-1/2 text-white p-3 rounded-full
+                  bg-black bg-opacity-50 hover:bg-opacity-75 z-20 transition-colors
+                  sm:mt-[4rem]"
                 onClick={() => handleUserInteraction((currentSlide + 1) % totalSlides)} // Usa a lógica handleNext, mas com a pausa
             >
                 <FaArrowRight className="text-2xl" />
