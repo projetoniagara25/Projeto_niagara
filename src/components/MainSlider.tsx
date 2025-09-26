@@ -177,7 +177,7 @@ const MainSlider: React.FC = () => {
                                 <Link
                                     href={slide.link || "#"}
                                     className="inline-flex items-center justify-center border-2 rounded-full py-3 px-8 text-lg font-bold
-                                            transition-colors duration-300
+                                            transition-colors duration-300 hover:scale-105 hover:shadow-xl
                                             text-white border-white hover:bg-white hover:text-gray-800 bg-transparent"
                                 >
                                     {slide.buttonText}

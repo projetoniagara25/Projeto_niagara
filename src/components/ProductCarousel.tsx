@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import imagemTeste from '../assets/images/produto.webp'
+import { useWindowSize } from '../hooks/useWindowSize'; 
 
 const products = [
   {
@@ -63,8 +64,32 @@ const products = [
 
 const ProductCarousel: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const itemsPerSlide = 3;
+  const windowSize = useWindowSize(); // 1. CHAMA O HOOK
+
+  // const itemsPerSlide = 3;
+   const itemsPerSlide = (() => {
+    // Se a largura não estiver definida (durante SSR), usa 1 como fallback
+    if (windowSize.width === undefined) return 1; 
+
+    // Largura MD do Tailwind é 768px
+    if (windowSize.width >= 1024) { // Tamanho LG (desktop)
+      return 3;
+    } else if (windowSize.width >= 640) { // Tamanho SM (tablet)
+      return 2;
+    } else { // Telas pequenas (mobile)
+      return 1;
+    }
+  })();
+
+  // 3. RECÁLCULO DO TOTAL DE SLIDES
+  // A lógica de navegação é baseada no número de itens por slide.
   const totalSlides = Math.ceil(products.length / itemsPerSlide);
+
+   // Efeito para corrigir a navegação ao redimensionar
+  // Se o número total de slides mudar, reseta currentSlide para 0
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [itemsPerSlide]);
 
   const handleNext = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
@@ -106,7 +131,7 @@ const ProductCarousel: React.FC = () => {
                         <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h3>
                         <p className="text-sm text-gray-600 mb-4 flex-grow">{product.description}</p>
                         <button
-                          className="w-[60%] buton-ask mt-auto flex items-center justify-center gap-3 bg-green-500 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                          className="hover:cursor-pointer w-[60%] buton-ask mt-auto flex items-center justify-center hover:scale-105 hover:shadow-xl bg-green-500 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                           onClick={() => window.open('https://api.whatsapp.com/send?phone=5511975147817&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20produto%3A%20' + product.title, '_blank')}
                         >
                           <FaWhatsapp className="mr-2" /> Pedir
@@ -122,13 +147,13 @@ const ProductCarousel: React.FC = () => {
 
           {/* Botões de Navegação */}
           <button
-            className="absolute top-1/2 left-0 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg z-10 transition-colors duration-200 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="hover:cursor-pointer absolute top-1/2 left-0 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg z-10 transition-colors duration-200 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
             onClick={handlePrev}
           >
             <FaArrowLeft />
           </button>
           <button
-            className="absolute top-1/2 right-0 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg z-10 transition-colors duration-200 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="hover:cursor-pointer absolute top-1/2 right-0 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg z-10 transition-colors duration-200 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
             onClick={handleNext}
           >
             <FaArrowRight />
