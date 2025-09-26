@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Header: React.FC = () => {
   return (
-    <header className="fixed top-0 left-0 w-full bg-blue-600 shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-[#152b4f] shadow-md z-50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
         {/* Logo/Título da Empresa */}
         <div className="text-white text-2xl font-bold">
@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 
         {/* Área de Navegação */}
         <nav>
-          <ul className="flex space-x-6 text-white font-medium">
+          <ul className="flex space-x-6 text-white font-medium uppercase">
             <li>
               <Link href="#about-us" className="hover:text-blue-200 transition-colors duration-300">
                 Sobre Nós

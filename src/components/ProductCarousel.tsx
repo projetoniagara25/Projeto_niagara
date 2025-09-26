@@ -78,7 +78,7 @@ const ProductCarousel: React.FC = () => {
     <section id='products' className="py-16 relative">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-          Nossos Produtos
+          Conheça nossos Produtos
         </h2>
 
         <div className="relative">
@@ -106,8 +106,8 @@ const ProductCarousel: React.FC = () => {
                         <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h3>
                         <p className="text-sm text-gray-600 mb-4 flex-grow">{product.description}</p>
                         <button
-                          className="mt-auto flex items-center justify-center bg-green-500 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-                          onClick={() => window.open('https://api.whatsapp.com/send?phone=5511999999999&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20produto%3A%20' + product.title, '_blank')}
+                          className="w-[60%] buton-ask mt-auto flex items-center justify-center gap-3 bg-green-500 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                          onClick={() => window.open('https://api.whatsapp.com/send?phone=5511975147817&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20produto%3A%20' + product.title, '_blank')}
                         >
                           <FaWhatsapp className="mr-2" /> Pedir
                         </button>

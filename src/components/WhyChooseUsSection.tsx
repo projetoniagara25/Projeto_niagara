@@ -1,7 +1,7 @@
 import React from 'react';
 import './WhyChooseUsSection.css'
 
-import { FaTruck, FaShieldAlt, FaHeadset } from 'react-icons/fa';
+import { FaTruck, FaHeadset, FaAward} from 'react-icons/fa';
 
 const WhyChooseUsSection: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ const WhyChooseUsSection: React.FC = () => {
           </div>
 
           <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-            <FaShieldAlt className="text-5xl text-green-600 mb-4" />
+            <FaAward className="text-5xl text-green-600 mb-4" />
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Qualidade Garantida</h3>
             <p className="text-gray-600">
               Trabalhamos apenas com produtos de alta qualidade, inspecionados para sua total satisfação.

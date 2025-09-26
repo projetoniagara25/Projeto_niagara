@@ -1,17 +1,20 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 import contactImage from '../assets/images/Niagara_Logo_2.jpg'; 
+import GoogleMapsSection from './GoogleMapsSection';
 
 
 const ContactSection: React.FC = () => {
 
-  const whatsappNumber = '5511999999999';
-  const emailAddress = 'contato@niagaralindoya.com.br';
+  const whatsappNumber = '5511975147817';
+  const emailAddress = 'atendimento@niagaralindoya.com';
 
   return (
-    <section  className="bg-white py-16" id="contact">
+    <section id="contact" className="bg-white py-16" >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Lado esquerdo: Informações de Contato */}
@@ -30,7 +33,7 @@ const ContactSection: React.FC = () => {
                 <span className="font-semibold text-gray-800">WhatsApp</span>
                 <p className="text-gray-600">
                   <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                    (11) 99999-9999
+                    (11) 97514-7817
                   </a>
                 </p>
               </div>
@@ -42,7 +45,7 @@ const ContactSection: React.FC = () => {
               <div>
                 <span className="font-semibold text-gray-800">E-mail</span>
                 <p className="text-gray-600">
-                  <a href={`mailto:${emailAddress}`} className="hover:underline">
+                  <a href={`mailto:atendimento@niagaralindoya.com`} className="hover:underline">
                     {emailAddress}
                   </a>
                 </p>
@@ -65,8 +68,10 @@ const ContactSection: React.FC = () => {
             <img 
               src={contactImage.src} 
               alt="Pessoas em contato" 
-              className="rounded-lg shadow-lg max-w-full h-auto" 
+              className="rounded-lg shadow-lg max-w-[65%] h-auto" 
             />
+
+            {/* <GoogleMapsSection></GoogleMapsSection> */}
           </div>
         </div>
       </div>
