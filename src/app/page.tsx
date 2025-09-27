@@ -1,10 +1,10 @@
-import AboutUsSection from "@/components/AboutUsSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import MainSlider from "@/components/MainSlider";
-import ProductCarousel from "@/components/ProductCarousel";
-import WhyChooseUsSection from "@/components/WhyChooseUsSection";
+import AboutUsSection from "../components/AboutUsSection";
+import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import MainSlider from "../components/MainSlider";
+import ProductCarousel from "../components/ProductCarousel";
+import WhyChooseUsSection from "../components/WhyChooseUsSection";
 
 export default function Home() {
 
