@@ -1,10 +1,8 @@
-// src/components/MainSlider.tsx
-
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-
+import './MainSlider.css'
 // Importe suas imagens de fundo
 // Certifique-se de ter as imagens neste caminho e ajuste se necessário
 import background1 from '../assets/images/background-agua.jpg';
@@ -195,19 +193,17 @@ const MainSlider: React.FC = () => {
 
             {/* Botões de Navegação (Setas) */}
             <button
-                className="hover:cursor-pointer absolute top-1/2 left-4 
+                className="hover:cursor-pointer absolute bottom-0 left-4 
                 transform -translate-y-1/2 text-white p-3 rounded-full
-                 bg-black bg-opacity-50 hover:bg-opacity-75 z-20 transition-colors
-                 sm:mt-[4rem]"
+                 bg-black bg-opacity-50 hover:bg-opacity-75 z-20 transition-colors arrow-slide"
                 onClick={() => handleUserInteraction((currentSlide - 1 + totalSlides) % totalSlides)} // Usa a lógica handlePrev, mas com a pausa
             >
                 <FaArrowLeft className="text-2xl" />
             </button>
             <button
-                className="hover:cursor-pointer absolute top-1/2 right-4
+                className="hover:cursor-pointer absolute bottom-0 right-4
                  transform -translate-y-1/2 text-white p-3 rounded-full
-                  bg-black bg-opacity-50 hover:bg-opacity-75 z-20 transition-colors
-                  sm:mt-[4rem]"
+                  bg-black bg-opacity-50 hover:bg-opacity-75 z-20 transition-colors arrow-slide"
                 onClick={() => handleUserInteraction((currentSlide + 1) % totalSlides)} // Usa a lógica handleNext, mas com a pausa
             >
                 <FaArrowRight className="text-2xl" />

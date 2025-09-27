@@ -1,7 +1,6 @@
 "use client";
 
-// src/components/Header.tsx
-
+import './Header.css'
 import React, { useState } from 'react';
 import Link from 'next/link';
 
@@ -9,6 +8,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'; // Ícones de Menu e Fechar
 
 // Definição dos itens de navegação
 const navItems = [
+  { name: 'Início', href: '#main' },
   { name: 'Sobre Nós', href: '#about-us' },
   { name: 'Produtos', href: '#products' },
   { name: 'Porque nos escolher?', href: '#why-chose-us' },
@@ -22,11 +22,9 @@ const Header: React.FC = () => {
     setIsOpen(false); // Fecha o menu ao clicar em um link (apenas no mobile)
   };
 
-
  return (
-    <header className="fixed top-0 left-0 w-full bg-[#152b4f] shadow-md z-49">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
-        
+    <header className="fixed div-header w-full bg-[#152b4f] z-49 top-0 left-0 ">
+      <div className="flex mx-auto items-center justify-between  h-16 px-6">
         {/* Logo/Título da Empresa */}
         <div className="text-white text-2xl font-bold">
           <Link href="/">NIAGARA</Link>

@@ -7,11 +7,11 @@ import RevealRight from './RevealRight';
 
 const WhyChooseUsSection: React.FC = () => {
   return (
-    <section id='why-chose-us' className="section-whyChose py-16 h-min">
+    <section id='why-chose-us' className="section-whyChose py-16 h-min bg-gray-10">
       <div className="container mx-auto px-4 text-center">
     
         <Reveal>
-          <h2 className="text-4xl font-bold text-gray-800 mb-12">
+          <h2 className="text-4xl font-bold text-gray-800 mb-12 mt-10">
           Por que escolher a Niágara Lindóya?
         </h2>
         </Reveal>

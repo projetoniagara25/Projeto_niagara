@@ -101,9 +101,9 @@ const ProductCarousel: React.FC = () => {
   };
 
   return (
-    <section id='products' className="py-16 relative">
+    <section id='products' className="py-16 relative bg-gradient-to-r from-blue-100 to-indigo-300">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8 mt-8">
           Conheça nossos Produtos
         </h2>
 
@@ -111,18 +111,20 @@ const ProductCarousel: React.FC = () => {
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}      
             >
               {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                 <div key={slideIndex} className="w-full flex-shrink-0">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+                  justify-items-center">
                     {products.slice(
                       slideIndex * itemsPerSlide,
                       (slideIndex + 1) * itemsPerSlide
                     ).map((product) => (
                       <div
                         key={product.id}
-                        className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 text-center"
+                        className="bg-white rounded-t-full shadow-lg flex flex-col items-center p-6 text-center overflow-hidden w-[80%] 
+                        "
                       >
                         <Reveal><img
                           src={product.image}
@@ -134,7 +136,9 @@ const ProductCarousel: React.FC = () => {
                         <p className="text-sm text-gray-600 mb-4 flex-grow">{product.description}</p>
                         </Reveal>
                         <button
-                          className="hover:cursor-pointer w-[60%] buton-ask mt-auto flex items-center justify-center hover:scale-105 hover:shadow-xl bg-green-500 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                          className="hover:cursor-pointer w-[60%] buton-ask mt-auto flex items-center justify-center 
+                          hover:scale-105 hover:shadow-xl bg-green-500 text-white font-bold py-2 px-4 rounded-full transition-colors
+                           duration-200 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                           onClick={() => window.open('https://api.whatsapp.com/send?phone=5511975147817&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20produto%3A%20' + product.title, '_blank')}
                         >
                           <FaWhatsapp className="mr-2" /> Pedir

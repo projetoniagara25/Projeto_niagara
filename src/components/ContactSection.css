@@ -1,0 +1,21 @@
+.area-contact{
+
+}
+
+@media (max-width: 640px){
+    .area-contact{
+        flex-direction: column;
+    }
+
+    .area-maps{
+        padding: 1rem;
+
+      
+    }
+
+     .maps {
+        width: 95%;
+        background-color: red;
+
+    }
+}

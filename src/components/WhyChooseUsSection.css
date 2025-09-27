@@ -1,13 +1,14 @@
-/* @media (max-width: 1024px){
+@media (min-width: 1024px){
 
    .section-whyChose{
-    background-color: orange;
+   min-height: 90vh;
+
    }
 
 
 }
 
-@media (max-width: 768px){
+/* @media (max-width: 768px){
 
    .section-whyChose{
     background-color: red;
@@ -24,4 +25,4 @@
     background-color: blue;
    }
 
-} */
+}  */

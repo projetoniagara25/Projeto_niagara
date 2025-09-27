@@ -3,13 +3,16 @@
 import React, { useEffect, useRef } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 
-const API_KEY = "SUA_CHAVE_DE_API_DO_GOOGLE_MAPS";
+const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""; 
 
 const GoogleMapsSection: React.FC = () => {
     const mapRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        if (!mapRef.current) return;
+        if (!API_KEY || !mapRef.current) {
+        console.error("Erro: A chave da API do Google Maps não foi carregada ou o elemento de referência não existe.");
+        return;
+    }
 
         const loader = new Loader({
             apiKey: API_KEY,
@@ -35,13 +38,13 @@ const GoogleMapsSection: React.FC = () => {
 
     return (
         <section className="flex flex-col py-16 w-full">
-            <div className=" w-full container mx-auto px-4">
+            <div className=" w-full container mx-auto">
                 <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
                     Encontre-nos no Mapa
                 </h2>
                 <div
                     ref={mapRef}
-                    className="w-[35rem] h-[400px] rounded-lg shadow-lg"
+                    className="maps h-[400px] rounded-lg shadow-lg"
                 />
             </div>
         </section>

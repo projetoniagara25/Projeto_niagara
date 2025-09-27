@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import './Footer.css'
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 text-gray-300 py-12">
-      <div className="container mx-auto px-4 grid grid-cols-1 gap-3 md:grid-cols-3 sm:grid-cols-2">
+    <footer className="bg-[#152b4f] text-gray-300 py-6">
+      <div className="footer-area mx-auto px-4">
         {/* 1. Ícone e Ano da Empresa */}
         <div className="flex flex-col items-start space-y-2">
           {/* Substitua o SVG ou o ícone do componente da sua empresa aqui */}
@@ -18,8 +19,8 @@ const Footer: React.FC = () => {
         </div>
 
         {/* 2. Área do Cliente */}
-        <div>
-          <h4 className="text-white font-semibold mb-3">Área do Cliente</h4>
+        <div className=" min-w-max flex flex-col xl:pl-7 ">
+          <h4 className="text-white font-semibold mb-3 ">Área do Cliente</h4>
           <ul className="space-y-2">
             <li><a href="#contact" className="hover:text-white transition-colors duration-200">Contatar</a></li>
             <li><a href="#main" className="hover:text-white transition-colors duration-200">Realizar Pedido</a></li>
@@ -27,7 +28,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* 3. Empresa */}
-        <div>
+        <div className=" min-w-max flex flex-col ">
           <h4 className="text-white font-semibold mb-3">Empresa</h4>
           <ul className="space-y-2">
             <li><a href="#about-us" className="hover:text-white transition-colors duration-200">Sobre Nós</a></li>
@@ -35,7 +36,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* 4. Informação */}
-        <div>
+        <div className=" min-w-max flex flex-col ">
           <h4 className="text-white font-semibold mb-3">Informação</h4>
           <ul className="space-y-2">
             <li><p className="hover:text-white transition-colors duration-200">Termos e Condições</p></li>
@@ -44,7 +45,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* 5. Siga-nos */}
-        <div>
+        <div className=" min-w-max flex flex-col ">
           <h4 className="text-white font-semibold mb-3">Siga-nos</h4>
           <div className="flex space-x-4 mt-2">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-2xl hover:text-white transition-colors duration-200">
@@ -57,7 +58,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* 6. Navegação */}
-        <div>
+        <div className=" min-w-max flex flex-col ">
           <h4 className="text-white font-semibold mb-3">Navegação</h4>
           <ul className="space-y-2">
             <li><Link href={'#about-us'} className="hover:text-white transition-colors duration-200">Sobre nós</Link></li>
