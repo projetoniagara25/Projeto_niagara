@@ -21,8 +21,8 @@ const GoogleMapsSection: React.FC = () => {
 
         const mapOptions: google.maps.MapOptions = {
             center: {
-                lat: -23.55052,  // Latitude do centro de São Paulo (Exemplo)
-                lng: -46.633308, // Longitude do centro de São Paulo (Exemplo)
+                lat: -22.512642915924395,  // Latitude do centro de São Paulo (Exemplo)
+                lng: -46.6409210357665, // Longitude do centro de São Paulo (Exemplo) 
             },
             zoom: 12,
             mapId: 'MAPA_DA_NIAGARA', // Opcional: use um Map ID personalizado do Google Cloud
