@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-import "./GoogleMapsSection.css"
+import "./GoogleMapsSection.css";
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
@@ -10,6 +10,7 @@ const GoogleMapsSection: React.FC = () => {
   const mapRef = useRef<HTMLDivElement | null>(null);
   const [isClient, setIsClient] = useState(false);
 
+  // Marca quando o componente está montado no cliente
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -33,36 +34,39 @@ const GoogleMapsSection: React.FC = () => {
     };
 
     (async () => {
-     
+      // Importa as bibliotecas separadamente para evitar deprecated
       const { Map } = (await loader.importLibrary("maps")) as google.maps.MapsLibrary;
       const { Marker } = (await loader.importLibrary("marker")) as google.maps.MarkerLibrary;
 
-      
+      // Cria o mapa
       const map = new Map(mapRef.current as HTMLElement, mapOptions);
 
-      
+      // Cria o marcador
       const marker = new Marker({
         position,
         map,
         title: "Nossa Localização",
       });
 
-      
+      // Cria a InfoWindow com imagem e link
       const infoWindow = new google.maps.InfoWindow({
         content: `
-           <div style="font-size:14px; display: flex; align-items: center; gap: 8px;">
-            <img src="/Niagara_Logo_2.jpg" alt="Logo" style="width:24px; height:24px; border-radius:4px;" />
+          <div style="font-size:14px; display:flex; align-items:center; gap:8px;">
+            <img src="/Niagara_Logo_2.jpg" alt="Logo" style="width:24px;height:24px;border-radius:4px;" />
             <div>
-                <strong>Nossa Localização</strong><br/>
-                <a href="https://maps.app.goo.gl/HptNCHfnNSpAkQd4A" 
-                target="_blank" rel="noopener noreferrer">
+              <strong>Nossa Localização</strong><br/>
+              <a href="https://maps.app.goo.gl/HptNCHfnNSpAkQd4A" target="_blank" rel="noopener noreferrer">
                 Ver no Google Maps
-                </a>
+              </a>
             </div>
-            </div>
+          </div>
         `,
       });
 
+      // Abre automaticamente a InfoWindow ao carregar
+      infoWindow.open(map, marker);
+
+      // Mantém a abertura no clique também
       marker.addListener("click", () => {
         infoWindow.open(map, marker);
       });
