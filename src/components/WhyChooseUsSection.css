@@ -8,21 +8,12 @@
 
 }
 
-/* @media (max-width: 768px){
+ @media (max-width: 768px){
 
-   .section-whyChose{
-    background-color: red;
+   .card-choseus{
+      width: 90%;
+      justify-self: center;
    }
 
 
 }
-
-
-
-@media (max-width:420px){
-
-    .section-whyChose{
-    background-color: blue;
-   }
-
-}  */

@@ -1,0 +1,11 @@
+@media (max-width:640px){
+    .right-side-aboutus{
+        display: flex;
+        flex-direction: column;
+        padding:0 2rem;
+    }
+
+    .right-side-aboutus>h2{
+        align-self: center;
+    }
+}

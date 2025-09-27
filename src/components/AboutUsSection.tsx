@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-
+import './AboutUsSection.css'
 import companyLogo from '../assets/images/Niagara_Logo_1.jpg';
 import Reveal from './Reveal';
 
@@ -18,7 +18,7 @@ const AboutUsSection: React.FC = () => {
           />
         </div>
 
-        <div className="w-full md:w-1/2">
+        <div className="right-side-aboutus w-full md:w-1/2">
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Sobre Nós

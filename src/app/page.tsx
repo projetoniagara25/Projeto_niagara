@@ -15,7 +15,6 @@ export default function Home() {
       <main className="flex flex-col h-max bg-gray-200 w-full overflow-x-hidden">
 
         <MainSlider></MainSlider>
-        {/* <MainSection></MainSection> */}
         <AboutUsSection></AboutUsSection>
         <ProductCarousel></ProductCarousel>
         <WhyChooseUsSection></WhyChooseUsSection>

@@ -20,7 +20,7 @@ const ContactSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:flex sm:flex-col">
         <div className="area-contact flex flex-row items-center justify-center px-8">
           {/* Lado esquerdo: Informações de Contato */}
-          <div className="w-full flex flex-col">
+          <div className="left-side w-full flex flex-col">
             <Reveal>
               <h2 className="text-4xl font-bold text-gray-800 mb-4">
                 Fale Conosco
@@ -66,7 +66,7 @@ const ContactSection: React.FC = () => {
                 href={`https://wa.me/${whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 px-8 py-3 bg-green-500 text-white font-bold rounded-lg 
+                className="bt-wapp mt-4 px-8 py-3 bg-green-500 text-white font-bold rounded-lg 
                 shadow-md transition-colors duration-200 hover:bg-green-600 focus:outline-none 
                 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
               >

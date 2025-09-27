@@ -19,8 +19,8 @@ const Footer: React.FC = () => {
         </div>
 
         {/* 2. Área do Cliente */}
-        <div className=" min-w-max flex flex-col xl:pl-7 ">
-          <h4 className="text-white font-semibold mb-3 ">Área do Cliente</h4>
+        <div className=" min-w-max flex flex-col client-area">
+          <h4 className="text-white font-semibold mb-3  ">Área do Cliente</h4>
           <ul className="space-y-2">
             <li><a href="#contact" className="hover:text-white transition-colors duration-200">Contatar</a></li>
             <li><a href="#main" className="hover:text-white transition-colors duration-200">Realizar Pedido</a></li>
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* 3. Empresa */}
-        <div className=" min-w-max flex flex-col ">
+        <div className="bussines min-w-max flex flex-col ">
           <h4 className="text-white font-semibold mb-3">Empresa</h4>
           <ul className="space-y-2">
             <li><a href="#about-us" className="hover:text-white transition-colors duration-200">Sobre Nós</a></li>
@@ -36,8 +36,8 @@ const Footer: React.FC = () => {
         </div>
 
         {/* 4. Informação */}
-        <div className=" min-w-max flex flex-col ">
-          <h4 className="text-white font-semibold mb-3">Informação</h4>
+        <div className="info min-w-max flex flex-col ">
+          <h4 className="text-white font-semibold mb-3 ">Informação</h4>
           <ul className="space-y-2">
             <li><p className="hover:text-white transition-colors duration-200">Termos e Condições</p></li>
             {/* <li><a href="#" className="hover:text-white transition-colors duration-200">Termos e Condições</a> */}
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* 5. Siga-nos */}
-        <div className=" min-w-max flex flex-col ">
+        <div className="followus min-w-max flex flex-col ">
           <h4 className="text-white font-semibold mb-3">Siga-nos</h4>
           <div className="flex space-x-4 mt-2">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-2xl hover:text-white transition-colors duration-200">
