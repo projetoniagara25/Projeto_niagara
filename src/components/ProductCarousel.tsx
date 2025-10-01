@@ -15,6 +15,7 @@ import produto7 from '../assets/images/laranja.webp'
 import produto8 from '../assets/images/Maracuja.webp'
 import produto9 from '../assets/images/uva.webp'
 import produto10 from '../assets/images/Goiaba.webp'
+import Image from 'next/image';
 
 const products = [
   {
@@ -147,11 +148,14 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ whatsapp }) => {
                         className="bg-white rounded-t-full shadow-lg flex flex-col items-center p-6 text-center overflow-hidden w-[80%] 
                         "
                       >
-                        <Reveal><img
+                        <Reveal><Image
                           src={product.image}
                           alt={product.title}
+                          width={400} // defina valores próximos do real
+                          height={288} // proporção ajustada para ~18rem de altura
                           className="w-full h-auto max-h-[18rem] object-cover rounded mb-4"
-                        /></Reveal>
+                        />
+                        </Reveal>
                         <Reveal>
                           <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h3>
                           <p className="text-sm text-gray-600 mb-4 flex-grow">{product.description}</p>
