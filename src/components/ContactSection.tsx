@@ -13,7 +13,7 @@ import { StringifyOptions } from 'querystring';
 
 type ContactSectionProps = {
 
-  whatsapp: String;
+  whatsapp: string;
 
 }
 
