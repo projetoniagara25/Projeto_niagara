@@ -1,9 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import './Footer.css'
 
-const Footer: React.FC = () => {
+
+type FooterProps = {
+  whatsapp : string
+}
+const Footer: React.FC<FooterProps> = ({whatsapp}) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -53,6 +57,9 @@ const Footer: React.FC = () => {
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-white transition-colors duration-200">
               <FaInstagram />
+            </a>
+             <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-white transition-colors duration-200">
+              <FaWhatsapp />
             </a>
           </div>
         </div>

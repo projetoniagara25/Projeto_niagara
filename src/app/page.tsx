@@ -8,6 +8,8 @@ import WhyChooseUsSection from "../components/WhyChooseUsSection";
 
 export default function Home() {
 
+  const whatsappNumber = '5511995354703';
+
   return (
     <>
     <Header></Header>
@@ -16,13 +18,13 @@ export default function Home() {
 
         <MainSlider></MainSlider>
         <AboutUsSection></AboutUsSection>
-        <ProductCarousel></ProductCarousel>
+        <ProductCarousel whatsapp={whatsappNumber}></ProductCarousel>
         <WhyChooseUsSection></WhyChooseUsSection>
-        <ContactSection></ContactSection>
+        <ContactSection  whatsapp={whatsappNumber}></ContactSection>
       
       </main>
 
-      <Footer></Footer>
+      <Footer whatsapp={whatsappNumber}></Footer>
 
     </>
   );

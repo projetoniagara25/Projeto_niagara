@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Niagara Lindóya",
-  description: "A fonte da vida",
+  title: "Niágara Lindoya",
+  description: "A força da água",
 };
 
 export default function RootLayout({

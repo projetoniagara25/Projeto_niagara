@@ -2,75 +2,96 @@
 
 import React, { useEffect, useState } from 'react';
 import { FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import imagemTeste from '../assets/images/produto.webp'
-import { useWindowSize } from '../hooks/useWindowSize'; 
+import { useWindowSize } from '../hooks/useWindowSize';
 import Reveal from './Reveal';
+
+import produto1 from '../assets/images/6L.webp'
+import produto2 from '../assets/images/1.5L.webp'
+import produto3 from '../assets/images/500ml com gas.webp'
+import produto4 from '../assets/images/500ml natural.webp'
+import produto5 from '../assets/images/copo 200 e 300ml.webp'
+import produto6 from '../assets/images/Laranja com acerola.webp'
+import produto7 from '../assets/images/laranja.webp'
+import produto8 from '../assets/images/Maracuja.webp'
+import produto9 from '../assets/images/uva.webp'
+import produto10 from '../assets/images/Goiaba.webp'
 
 const products = [
   {
     id: 1,
-    image: imagemTeste.src,
-    title: 'Nome do Produto 1',
+    image: produto1.src,
+    title: 'Água natural 6L',
+
     description: 'Uma descrição curta sobre o Produto 1. Aqui você pode destacar os principais benefícios ou características.',
   },
   {
     id: 2,
-    image: imagemTeste.src,
-    title: 'Nome do Produto 2',
+    image: produto2.src,
+    title: 'Água natural 1.5L',
     description: 'Aqui temos a descrição do Produto 2, com informações importantes sobre suas funcionalidades.',
   },
   {
     id: 3,
-    image: imagemTeste.src,
-    title: 'Nome do Produto 3',
+    image: produto3.src,
+    title: 'Água com gás 500ml',
     description: 'Este é o Produto 3. Ele foi feito para resolver o seu problema de [problema] de forma eficiente.',
   },
   {
     id: 4,
-    image: imagemTeste.src,
-    title: 'Nome do Produto 4',
+    image: produto4.src,
+    title: 'Água natural 500ml',
     description: 'Uma descrição detalhada do Produto 4. Ótimo para quem busca [qualidade].',
   },
   {
     id: 5,
-    image: imagemTeste.src,
-    title: 'Nome do Produto 5',
+    image: produto5.src,
+    title: 'Água natural 200ml e 300ml',
     description: 'Descrição do Produto 5. Perfeito para [uso específico] e [benefício].',
   },
   {
     id: 6,
-    image: imagemTeste.src,
-    title: 'Nome do Produto 6',
+    image: produto6.src,
+    title: 'Suco de Laranja com Acerola 400ml',
     description: 'Mais um produto incrível para sua coleção!',
   },
   {
     id: 7,
-    image: imagemTeste.src,
-    title: 'Nome do Produto 7',
+    image: produto7.src,
+    title: 'Suco de Laranja 400ml',
     description: 'O melhor produto da categoria 7!',
   },
   {
     id: 8,
-    image: imagemTeste.src,
-    title: 'Nome do Produto 8',
+    image: produto8.src,
+    title: 'Suco de Maracujá 400ml',
     description: 'Experimente a inovação com este produto.',
   },
   {
     id: 9,
-    image: imagemTeste.src,
-    title: 'Nome do Produto 9',
+    image: produto9.src,
+    title: 'Suco de uva 400ml',
     description: 'Um produto essencial para o seu dia a dia.',
   },
+  {
+    id: 10,
+    image: produto10.src,
+    title: 'Suco de Goiaba 400ml',
+    description: 'Um produto essencial para o seu dia a dia.',
+  }
 ];
 
-const ProductCarousel: React.FC = () => {
+type ProductCarouselProps = {
+  whatsapp: string;
+};
+
+const ProductCarousel: React.FC<ProductCarouselProps> = ({ whatsapp }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const windowSize = useWindowSize(); // 1. CHAMA O HOOK
 
   // const itemsPerSlide = 3;
-   const itemsPerSlide = (() => {
+  const itemsPerSlide = (() => {
     // Se a largura não estiver definida (durante SSR), usa 1 como fallback
-    if (windowSize.width === undefined) return 1; 
+    if (windowSize.width === undefined) return 1;
 
     // Largura MD do Tailwind é 768px
     if (windowSize.width >= 1024) { // Tamanho LG (desktop)
@@ -86,7 +107,7 @@ const ProductCarousel: React.FC = () => {
   // A lógica de navegação é baseada no número de itens por slide.
   const totalSlides = Math.ceil(products.length / itemsPerSlide);
 
-   // Efeito para corrigir a navegação ao redimensionar
+  // Efeito para corrigir a navegação ao redimensionar
   // Se o número total de slides mudar, reseta currentSlide para 0
   useEffect(() => {
     setCurrentSlide(0);
@@ -111,7 +132,7 @@ const ProductCarousel: React.FC = () => {
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}      
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                 <div key={slideIndex} className="w-full flex-shrink-0">
@@ -129,17 +150,17 @@ const ProductCarousel: React.FC = () => {
                         <Reveal><img
                           src={product.image}
                           alt={product.title}
-                          className="w-full h-auto object-cover rounded mb-4"
+                          className="w-full h-auto max-h-[18rem] object-cover rounded mb-4"
                         /></Reveal>
                         <Reveal>
                           <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h3>
-                        <p className="text-sm text-gray-600 mb-4 flex-grow">{product.description}</p>
+                          <p className="text-sm text-gray-600 mb-4 flex-grow">{product.description}</p>
                         </Reveal>
                         <button
                           className="hover:cursor-pointer w-[60%] buton-ask mt-auto flex items-center justify-center 
                           hover:scale-105 hover:shadow-xl bg-green-500 text-white font-bold py-2 px-4 rounded-full transition-colors
                            duration-200 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-                          onClick={() => window.open('https://api.whatsapp.com/send?phone=5511975147817&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20produto%3A%20' + product.title, '_blank')}
+                          onClick={() => window.open(`https://api.whatsapp.com/send?phone=${whatsapp}&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20produto%3A%20` + product.title, '_blank')}
                         >
                           <FaWhatsapp className="mr-2" /> Pedir
                         </button>

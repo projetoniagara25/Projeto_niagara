@@ -9,11 +9,16 @@ import GoogleMapsSection from './GoogleMapsSection';
 import Reveal from './Reveal';
 import RevealRight from './RevealRight';
 import './ContactSection.css'
+import { StringifyOptions } from 'querystring';
 
+type ContactSectionProps = {
 
-const ContactSection: React.FC = () => {
+  whatsapp: String;
 
-  const whatsappNumber = '5511975147817';
+}
+
+const ContactSection: React.FC<ContactSectionProps> = ({ whatsapp }) => {
+
   const emailAddress = 'atendimento@niagaralindoya.com';
   return (
     <section id="contact" className="bg-gradient-to-r from-green-100 to-indigo-300 py-16" >
@@ -39,8 +44,8 @@ const ContactSection: React.FC = () => {
                 <div>
                   <span className="font-semibold text-gray-800">WhatsApp</span>
                   <p className="text-gray-600">
-                    <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                      (11) 97514-7817
+                    <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      (11) 99535-4703
                     </a>
                   </p>
                 </div>
@@ -63,7 +68,7 @@ const ContactSection: React.FC = () => {
             </Reveal>
             <Reveal>
               <a
-                href={`https://wa.me/${whatsappNumber}`}
+                href={`https://wa.me/${whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bt-wapp mt-4 px-8 py-3 bg-green-500 text-white font-bold rounded-lg 
@@ -78,13 +83,7 @@ const ContactSection: React.FC = () => {
           <div className="area-maps w-full flex items-center justify-center
           ">
             <RevealRight>
-              {/* <img
-              src={contactImage.src}
-              alt="Pessoas em contato"
-              className="rounded-lg shadow-lg max-w-[65%] h-auto sm:ml-[6.5rem]"
-            /> */}
-
-            <GoogleMapsSection></GoogleMapsSection>
+              <GoogleMapsSection></GoogleMapsSection>
             </RevealRight>
           </div>
         </div>

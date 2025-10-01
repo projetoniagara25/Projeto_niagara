@@ -19,7 +19,7 @@ const slides = [
         title: "A MELHOR ÁGUA MINERAL ENTREGUE EM SÃO PAULO",
         subtitle: "Qualidade superior e entrega super rápida direto até você!",
         buttonText: "Pedir pelo WhatsApp",
-        whatsappLink: "https://api.whatsapp.com/send?phone=5511975147817&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido.",
+        whatsappLink: `https://api.whatsapp.com/send?phone=5511995354703&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido.`,
         isConversionSlide: true, // Indica que é o slide de conversão com animação
     },
     {
@@ -41,6 +41,7 @@ const slides = [
         isConversionSlide: false,
     },
 ];
+
 
 const MainSlider: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
