@@ -23,61 +23,61 @@ const products = [
     image: produto1.src,
     title: 'Água natural 6L',
 
-    description: 'Uma descrição curta sobre o Produto 1. Aqui você pode destacar os principais benefícios ou características.',
+    description: 'O volume essencial de água pura para manter a hidratação da família ou do escritório a semana toda.',
   },
   {
     id: 2,
     image: produto2.src,
     title: 'Água natural 1.5L',
-    description: 'Aqui temos a descrição do Produto 2, com informações importantes sobre suas funcionalidades.',
+    description: 'A garrafa perfeita para quem busca hidratação prolongada, seja nos exercícios ou no trabalho.',
   },
   {
     id: 3,
     image: produto3.src,
     title: 'Água com gás 500ml',
-    description: 'Este é o Produto 3. Ele foi feito para resolver o seu problema de [problema] de forma eficiente.',
+    description: 'O toque de efervescência e frescor para quem busca uma hidratação levemente borbulhante e sofisticada.',
   },
   {
     id: 4,
     image: produto4.src,
     title: 'Água natural 500ml',
-    description: 'Uma descrição detalhada do Produto 4. Ótimo para quem busca [qualidade].',
+    description: 'A hidratação ideal para levar, garantindo leveza e pureza em qualquer momento do seu dia.',
   },
   {
     id: 5,
     image: produto5.src,
     title: 'Água natural 200ml e 300ml',
-    description: 'Descrição do Produto 5. Perfeito para [uso específico] e [benefício].',
+    description: 'Porções perfeitas de pureza, ideais para eventos, lanches rápidos ou para a hidratação das crianças.',
   },
   {
     id: 6,
     image: produto6.src,
     title: 'Suco de Laranja com Acerola 400ml',
-    description: 'Mais um produto incrível para sua coleção!',
+    description: 'O mix energizante e natural de laranja com a explosão de vitamina C da acerola para o seu bem-estar.',
   },
   {
     id: 7,
     image: produto7.src,
     title: 'Suco de Laranja 400ml',
-    description: 'O melhor produto da categoria 7!',
+    description: 'O sabor vibrante da laranja, puro e natural, para começar o dia ou recarregar as energias com frescor.',
   },
   {
     id: 8,
     image: produto8.src,
     title: 'Suco de Maracujá 400ml',
-    description: 'Experimente a inovação com este produto.',
+    description: 'A dose refrescante e calmante do maracujá, perfeito para um momento de pausa e relaxamento.',
   },
   {
     id: 9,
     image: produto9.src,
     title: 'Suco de uva 400ml',
-    description: 'Um produto essencial para o seu dia a dia.',
+    description: 'O sabor intenso e adocicado da uva, natural e nutritivo, ideal para um lanche reconfortante.',
   },
   {
     id: 10,
     image: produto10.src,
     title: 'Suco de Goiaba 400ml',
-    description: 'Um produto essencial para o seu dia a dia.',
+    description: 'A cremosidade e o sabor marcante da goiaba, uma opção tropical deliciosa e autêntica.',
   }
 ];
 
@@ -162,8 +162,8 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ whatsapp }) => {
                         </Reveal>
                         <button
                           className="hover:cursor-pointer w-[60%] buton-ask mt-auto flex items-center justify-center 
-                          hover:scale-105 hover:shadow-xl bg-green-500 text-white font-bold py-2 px-4 rounded-full transition-colors
-                           duration-200 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                          hover:scale-105 hover:shadow-md bg-tranparemt text-gray-800 border-1 border-gray-800 ease-in-out font-bold py-2 px-4 rounded-full transition-colors
+                           duration-200 hover:border-none hover:bg-green-500 hover:text-white focus:outline-none"
                           onClick={() => window.open(`https://api.whatsapp.com/send?phone=${whatsapp}&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20produto%3A%20` + product.title, '_blank')}
                         >
                           <FaWhatsapp className="mr-2" /> Pedir

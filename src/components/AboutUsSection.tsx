@@ -26,12 +26,12 @@ const AboutUsSection: React.FC = () => {
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <Reveal>
               <p>
-                Na Niagara Lindóya, nossa jornada começou em 2004 com uma visão clara: [descreva a visão ou missão inicial]. Desde então, temos nos dedicado a [mencione o que sua empresa faz ou o problema que resolve], sempre com o compromisso de [mencione um valor fundamental, como qualidade, inovação, etc.].
+              Fundada em 2004 como uma distribuidora de bebidas e água, a Niagara evoluiu significativamente. Em 2018, concluímos o ciclo de distribuição para nos dedicarmos integralmente ao lançamento da nossa própria marca.
               </p>
             </Reveal>
             <Reveal>
               <p>
-              Acreditamos que [fale sobre o que impulsiona a empresa, como o cliente, a equipe, a sustentabilidade]. Nosso time é formado por profissionais apaixonados e talentosos que trabalham incansavelmente para [mencione o objetivo atual, como superar expectativas, entregar soluções excepcionais].
+              Na Niagara, temos um princípio inegociável: a excelência é a nossa fundação. Acreditamos que a satisfação do cliente é o nosso foco principal e a maior recompensa. Nosso time é composto por profissionais dedicados e talentosos que trabalham com paixão para garantir a qualidade superior de cada produto. Fazemos isso com total responsabilidade ambiental, reforçando nosso compromisso sólido com a sustentabilidade.
             </p>
             </Reveal>
             <Reveal>

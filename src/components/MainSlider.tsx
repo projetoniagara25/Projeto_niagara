@@ -26,7 +26,7 @@ const slides = [
         id: 2,
         bgImage: background2.src,
         title: "COMPROMISSO COM A PUREZA",
-        subtitle: "Água Lindóya: a fonte de saúde para sua família.",
+        subtitle: "Niagara Lindoya, a força d’agua !",
         buttonText: "Ver Produtos",
         link: "#products",
         isConversionSlide: false,
@@ -34,9 +34,9 @@ const slides = [
     {
         id: 3,
         bgImage: background3.src,
-        title: "ENTREGA RÁPIDA EM TODA SÃO PAULO",
-        subtitle: "Seu pedido chega na porta em tempo recorde.",
-        buttonText: "Fale Conosco",
+        title: "ENTREGAMOS EM TODA A GRANDE SÃO PAULO E REGIÕES PRÓXIMAS",
+        subtitle: "Verifique a disponibilidade para sua localidade e saiba mais.",
+        buttonText: "Consulte sobre nossos prazos",
         link: "#contact",
         isConversionSlide: false,
     },
@@ -166,7 +166,7 @@ const MainSlider: React.FC = () => {
                                     className={`inline-flex items-center justify-center border-2 rounded-full py-3 px-8 text-lg font-bold
                                         transition-all ease-in-out duration-300 delay-100 hover:scale-105 hover:shadow-xl
                                         ${index === 0 && currentSlide === 0 ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
-                                        text-green-400 border-green-400 hover:bg-green-400 hover:text-white bg-transparent
+                                        text-white border-white hover:bg-white hover:text-gray-800 bg-transparent
                                     `}
                                 >
                                     <FaWhatsapp className="mr-3 text-2xl" />

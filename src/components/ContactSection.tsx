@@ -71,9 +71,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ whatsapp }) => {
                 href={`https://wa.me/${whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bt-wapp mt-4 px-8 py-3 bg-green-500 text-white font-bold rounded-lg 
-                shadow-md transition-colors duration-200 hover:bg-green-600 focus:outline-none 
-                focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                className="bt-wapp mt-4 px-8 py-3 bg-transparent text-gray-800 hover:text-black font-bold rounded-lg 
+                shadow-md transition-colors duration-500 ease-in-out hover:bg-white border-gray-800 border-1 hover:border-none focus:outline-none 
+                focus:ring-2 focus:ring-white focus:ring-opacity-50 "
               >
                 Fale Agora Pelo WhatsApp
               </a>
