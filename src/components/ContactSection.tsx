@@ -21,7 +21,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ whatsapp }) => {
 
   const emailAddress = 'atendimento@niagaralindoya.com';
   return (
-    <section id="contact" className="bg-gradient-to-r from-green-100 to-indigo-300 py-16" >
+    <section id="contact" className="bg-gradient-to-r from-blue-100 to-[#009dc1] py-16" >
       <div className="container mx-auto px-4 sm:flex sm:flex-col">
         <div className="area-contact flex flex-row items-center justify-center px-8">
           {/* Lado esquerdo: Informações de Contato */}

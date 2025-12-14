@@ -3,21 +3,24 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import './MainSlider.css'
-// Importe suas imagens de fundo
-// Certifique-se de ter as imagens neste caminho e ajuste se necessário
-import background1 from '../assets/images/background-agua.jpg';
-import background2 from '../assets/images/sustentavel.jpg';
-import background3 from '../assets/images/entregarapida.jpg';
+
+import background1 from '../../public/niagara_site_banner_1920x1080_01.png';
+import background2 from '../../public/niagara_site_banner_1920x1080_03.png';
+import background3 from '../../public/niagara_site_banner_1920x1080_02.png';
+import background1Mobile from '../../public/niagara_site_banner_1080X1920_01.png';
+import background2Mobile from '../../public/niagara_site_banner_1080X1920_02.png';
+import background3Mobile from '../../public/niagara_site_banner_1080X1920_03.png';
+
 import Link from 'next/link';
 import Reveal from './Reveal';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
-// Estrutura dos slides
 const slides = [
     {
         id: 1,
         bgImage: background1.src,
-        title: "A MELHOR ÁGUA MINERAL ENTREGUE EM SÃO PAULO",
-        subtitle: "Qualidade superior e entrega super rápida direto até você!",
+        title: "",
+        subtitle: "",
         buttonText: "Pedir pelo WhatsApp",
         whatsappLink: `https://api.whatsapp.com/send?phone=5511995354703&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido.`,
         isConversionSlide: true, // Indica que é o slide de conversão com animação
@@ -25,8 +28,8 @@ const slides = [
     {
         id: 2,
         bgImage: background2.src,
-        title: "COMPROMISSO COM A PUREZA",
-        subtitle: "Niagara Lindoya, a força d’agua !",
+        title: "",
+        subtitle: "",
         buttonText: "Ver Produtos",
         link: "#products",
         isConversionSlide: false,
@@ -34,8 +37,38 @@ const slides = [
     {
         id: 3,
         bgImage: background3.src,
-        title: "ENTREGAMOS EM TODA A GRANDE SÃO PAULO E REGIÕES PRÓXIMAS",
-        subtitle: "Verifique a disponibilidade para sua localidade e saiba mais.",
+        title: "",
+        subtitle: "",
+        buttonText: "Consulte sobre nossos prazos",
+        link: "#contact",
+        isConversionSlide: false,
+    },
+];
+
+const slidesMobile = [
+    {
+        id: 1,
+        bgImage: background1Mobile.src,
+        title: "",
+        subtitle: "",
+        buttonText: "Pedir pelo WhatsApp",
+        whatsappLink: `https://api.whatsapp.com/send?phone=5511995354703&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido.`,
+        isConversionSlide: true, // Indica que é o slide de conversão com animação
+    },
+    {
+        id: 2,
+        bgImage: background2Mobile.src,
+        title: "",
+        subtitle: "",
+        buttonText: "Ver Produtos",
+        link: "#products",
+        isConversionSlide: false,
+    },
+    {
+        id: 3,
+        bgImage: background3Mobile.src,
+        title: "",
+        subtitle: "",
         buttonText: "Consulte sobre nossos prazos",
         link: "#contact",
         isConversionSlide: false,
@@ -51,6 +84,9 @@ const MainSlider: React.FC = () => {
     const AUTOPLAY_INTERVAL = 5000; // 5 segundos para troca automática
     const PAUSE_DURATION = 15000; // 10 segundos de pausa após interação
 
+    const { width = 0 } = useWindowSize();
+
+    const BREAKPOINT_MOBILE = 768;
 
     // Usa useCallback para memorizar as funções de navegação
     const handleNext = useCallback(() => {
@@ -122,17 +158,17 @@ const MainSlider: React.FC = () => {
                 className="flex h-full transition-transform duration-700 ease-in-out"
                 style={{ width: `${totalSlides * 100}%`, transform: `translateX(-${currentSlide * (100 / totalSlides)}%)` }}
             >
-                {slides.map((slide, index) => (
+                {(width > BREAKPOINT_MOBILE ? slides : slidesMobile).map((slide, index) => (
                     <div
                         key={slide.id}
-                        className="w-full h-full flex-shrink-0 bg-cover bg-center flex flex-col items-center justify-center text-center relative"
+                        className="w-full h-80% flex-shrink-0 bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center relative"
                         style={{
                             backgroundImage: `url('${slide.bgImage}')`,
                             width: `${100 / totalSlides}%`, // Garante que cada slide ocupe sua porção no flex
                         }}
                     >
                         {/* Overlay para contraste */}
-                        <div className="absolute inset-0 bg-black opacity-40"></div>
+                        <div className="absolute inset-0 bg-black opacity-10"></div>
 
                         {/* Conteúdo do Slide */}
                         <div className="relative z-10 text-white p-4 max-w-4xl">
@@ -166,7 +202,7 @@ const MainSlider: React.FC = () => {
                                     className={`inline-flex items-center justify-center border-2 rounded-full py-3 px-8 text-lg font-bold
                                         transition-all ease-in-out duration-300 delay-100 hover:scale-105 hover:shadow-xl
                                         ${index === 0 && currentSlide === 0 ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
-                                        text-white border-white hover:bg-white hover:text-gray-800 bg-transparent
+                                        text-white border-white hover:border-none hover:bg-green-500 hover:text-gray-800 bg-transparent mt-60
                                     `}
                                 >
                                     <FaWhatsapp className="mr-3 text-2xl" />
@@ -182,7 +218,7 @@ const MainSlider: React.FC = () => {
                                     href={slide.link || "#"}
                                     className="inline-flex items-center justify-center border-2 rounded-full py-3 px-8 text-lg font-bold
                                             transition-colors duration-300 hover:scale-105 hover:shadow-xl
-                                            text-white border-white hover:bg-white hover:text-gray-800 bg-transparent"
+                                            text-white border-white hover:bg-white hover:text-gray-800 bg-transparent  mt-60"
                                 >
                                     {slide.buttonText}
                                 </Link>

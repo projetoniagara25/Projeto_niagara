@@ -11,13 +11,13 @@ const Footer: React.FC<FooterProps> = ({whatsapp}) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#152b4f] text-gray-300 py-6">
+    <footer className="bg-[#274651] text-gray-300 py-6">
       <div className="footer-area mx-auto px-4">
         {/* 1. Ícone e Ano da Empresa */}
         <div className="flex flex-col items-start space-y-2">
           {/* Substitua o SVG ou o ícone do componente da sua empresa aqui */}
           <div className="text-white text-2xl font-bold">
-            <span className="text-blue-200">Niagara</span>Lindóya
+            Niágara<span className="text-[#009dc1]">Lindóya</span>
           </div>
           <span className="text-sm">© {currentYear} NiagaraLindóya. Todos os direitos reservados.</span>
         </div>
@@ -52,10 +52,10 @@ const Footer: React.FC<FooterProps> = ({whatsapp}) => {
         <div className="followus min-w-max flex flex-col ">
           <h4 className="text-white font-semibold mb-3">Siga-nos</h4>
           <div className="flex space-x-4 mt-2">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-2xl hover:text-white transition-colors duration-200">
+            <a href="https://facebook.com/703538462849443" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-2xl hover:text-white transition-colors duration-200">
               <FaFacebookF />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-white transition-colors duration-200">
+            <a href="https://www.instagram.com/niagara.lindoya" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-white transition-colors duration-200">
               <FaInstagram />
             </a>
              <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-white transition-colors duration-200">

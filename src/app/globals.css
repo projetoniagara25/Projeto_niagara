@@ -23,8 +23,32 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+
+      /* Regra do Firefox: define as cores e a espessura */
+    scrollbar-color: #009dc1 #e6e6e6; /* polegar / trilho */
+    scrollbar-width: 11px; /* fina */
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+
+/* Regras do WebKit (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+    width: 11px; /* Largura da barra */
+}
+
+::-webkit-scrollbar-track {
+    background: #e6e6e6; /* Cor do trilho (fundo) */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #009dc1; /* Cor do polegar (parte que move) - Exemplo: Azul */
+    border-radius: 20px;
+    border: 2px solid #009dc1; /* Adiciona uma borda para criar espaço */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #009dc1;
 }

@@ -123,7 +123,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ whatsapp }) => {
   };
 
   return (
-    <section id='products' className="py-16 relative bg-gradient-to-r from-blue-100 to-indigo-300">
+    <section id='products' className="py-16 relative bg-gradient-to-r from-blue-100 to-[#009dc1]">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-8 mt-8">
           Conheça nossos Produtos
