@@ -2,7 +2,7 @@
 
 import React from 'react';
 import './AboutUsSection.css'
-import companyLogo from '../assets/images/Niagara_Logo_1.jpg';
+import companyLogo from '../../public/Niagara_Logo_1.jpg';
 import Reveal from './Reveal';
 
 const AboutUsSection: React.FC = () => {
