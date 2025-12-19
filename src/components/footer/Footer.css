@@ -1,53 +1,89 @@
-@media(min-width:1024px){
+footer{
+    min-width: 360px;
+}
 
-    .footer-area{
-         display: grid;
-         grid-template-columns: repeat(6,1fr);
+.footer-area {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
     }
 
-    .client-area,.bussines, .info,.followus {
+    .client-area,
+    .bussines,
+    .info{
         margin-left: 1rem;
     }
 
-    .bussines,.followus{
+    .bussines,
+    .followus {
         margin-left: 3rem;
     }
-    .followus > div{
+
+    .followus>div {
         margin-left: -1rem;
     }
 
-}
+@media(max-width:900px) {
 
-@media(max-width:768px){
-
-    .footer-area{
-         display: grid;
-         grid-template-columns: repeat(3,1fr);
-         column-gap: 1rem;
+    .footer-area {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
     }
 
-    .followus > div{
+    .followus>div {
         max-width: max-content;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         row-gap: 1rem;
     }
 
+
+
+
+    .bussines,
+    .followus,.followus>div,.client-area,.info {
+        margin-left: 0rem;
+    }
+
+    
+
 }
 
-@media(max-width:640px){
+@media(max-width:640px) {
 
-    .footer-area{
-         display: grid;
-         grid-template-columns: repeat(2,1fr);
-         column-gap: 2em;
-         row-gap: 1rem;
-    
-    
+    .footer-area {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+        row-gap: 1rem;
+        /* padding-right: 1rem; */
+
     }
 }
 
-h4{
-     text-transform: uppercase;
-     margin-bottom: -.1rem;
+@media(max-width:360px) {
+
+    .footer-area {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .foot-title-lindoia{
+        align-self: center;
+    }
+    .area-social-links-icons{
+        display: grid !important;
+        grid-template-columns: repeat(3,1fr) !important;
+    }
+    
+
+}
+
+h4 {
+    text-transform: uppercase;
+    margin-bottom: -.1rem;
 }

@@ -4,15 +4,15 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import './MainSlider.css'
 
-import background1 from '../../public/niagara_site_banner_1920x1080_01.png';
-import background2 from '../../public/niagara_site_banner_1920x1080_03.png';
-import background3 from '../../public/niagara_site_banner_1920x1080_02.png';
-import background1Mobile from '../../public/niagara_site_banner_1080X1920_01.png';
-import background2Mobile from '../../public/niagara_site_banner_1080X1920_02.png';
-import background3Mobile from '../../public/niagara_site_banner_1080X1920_03.png';
+import background1 from '../../../public/niagara_site_banner_1920x1080_01.png';
+import background2 from '../../../public/niagara_site_banner_1920x1080_03.png';
+import background3 from '../../../public/niagara_site_banner_1920x1080_02.png';
+import background1Mobile from '../../../public/niagara_site_banner_1080X1920_01.png';
+import background2Mobile from '../../../public/niagara_site_banner_1080X1920_02.png';
+import background3Mobile from '../../../public/niagara_site_banner_1080X1920_03.png';
 
 import Link from 'next/link';
-import Reveal from './Reveal';
+import Reveal from '../Reveal';
 import { useWindowSize } from '@/hooks/useWindowSize';
 
 const slides = [
@@ -155,13 +155,13 @@ const MainSlider: React.FC = () => {
 
             {/* Container de Slides (100% da Largura da Tela) */}
             <div
-                className="flex h-full transition-transform duration-700 ease-in-out"
+                className="flex bg-amber-50 h-[100%] mt-16 transition-transform duration-700 ease-in-out"
                 style={{ width: `${totalSlides * 100}%`, transform: `translateX(-${currentSlide * (100 / totalSlides)}%)` }}
             >
                 {(width > BREAKPOINT_MOBILE ? slides : slidesMobile).map((slide, index) => (
                     <div
                         key={slide.id}
-                        className="w-full h-80% flex-shrink-0 bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center relative"
+                        className="w-full flex-shrink-0 bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center relative"
                         style={{
                             backgroundImage: `url('${slide.bgImage}')`,
                             width: `${100 / totalSlides}%`, // Garante que cada slide ocupe sua porção no flex
@@ -199,7 +199,7 @@ const MainSlider: React.FC = () => {
                                     href={slide.whatsappLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`inline-flex items-center justify-center border-2 rounded-full py-3 px-8 text-lg font-bold
+                                    className={`inline-flex items-center justify-center border-2 rounded-full mb-12 py-3 px-8 text-lg font-bold
                                         transition-all ease-in-out duration-300 delay-100 hover:scale-105 hover:shadow-xl
                                         ${index === 0 && currentSlide === 0 ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
                                         text-white border-white hover:border-none hover:bg-green-500 hover:text-gray-800 bg-transparent mt-60
@@ -216,7 +216,7 @@ const MainSlider: React.FC = () => {
                             {!slide.isConversionSlide && (
                                 <Link
                                     href={slide.link || "#"}
-                                    className="inline-flex items-center justify-center border-2 rounded-full py-3 px-8 text-lg font-bold
+                                    className="inline-flex items-center justify-center border-2 rounded-full mb-12 py-3 px-8 text-lg font-bold
                                             transition-colors duration-300 hover:scale-105 hover:shadow-xl
                                             text-white border-white hover:bg-white hover:text-gray-800 bg-transparent  mt-60"
                                 >

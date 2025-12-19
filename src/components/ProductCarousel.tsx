@@ -5,16 +5,16 @@ import { FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useWindowSize } from '../hooks/useWindowSize';
 import Reveal from './Reveal';
 
-import produto1 from '../assets/images/6L.webp'
-import produto2 from '../assets/images/1.5L.webp'
-import produto3 from '../assets/images/500ml com gas.webp'
-import produto4 from '../assets/images/500ml natural.webp'
-import produto5 from '../assets/images/copo 200 e 300ml.webp'
-import produto6 from '../assets/images/Laranja com acerola.webp'
-import produto7 from '../assets/images/laranja.webp'
-import produto8 from '../assets/images/Maracuja.webp'
-import produto9 from '../assets/images/uva.webp'
-import produto10 from '../assets/images/Goiaba.webp'
+import produto1 from '../../public/6L.webp'
+import produto2 from '../../public/1.5L.webp'
+import produto3 from '../../public/500ml com gas.webp'
+import produto4 from '../../public/500ml natural.webp'
+import produto5 from '../../public/copo 200 e 300ml.webp'
+import produto6 from '../../public/Laranja com acerola.webp'
+import produto7 from '../../public/laranja.webp'
+import produto8 from '../../public/Maracuja.webp'
+import produto9 from '../../public/uva.webp'
+import produto10 from '../../public/Goiaba.webp'
 import Image from 'next/image';
 
 const products = [
@@ -137,7 +137,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ whatsapp }) => {
             >
               {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                 <div key={slideIndex} className="w-full flex-shrink-0">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+                  <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-6
                   justify-items-center">
                     {products.slice(
                       slideIndex * itemsPerSlide,

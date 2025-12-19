@@ -52,3 +52,42 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #009dc1;
 }
+
+
+/* para rolagem da aba isntagram */
+
+/* src/styles/globals.css */
+
+/* Defina o keyframe para a animação de rolagem */
+@keyframes scroll {
+  0% {
+    /* Inicia com o primeiro conjunto de 5 posts visível (sem deslocamento) */
+    transform: translateX(0);
+  }
+  100% {
+    /* Desloca a div em 50% de sua largura total, movendo exatamente
+       o primeiro conjunto de 5 posts para fora da tela */
+    transform: translateX(-50%);
+  }
+}
+
+/* Aplica a animação à div 'slide-track' */
+.slide-track {
+  /* O dobro da largura dos 5 posts visíveis (200%) é para garantir
+     que todos os 10 posts estejam na linha */
+  width: 200%; 
+  
+  /* Aplica o keyframe 'scroll' por 30s, de forma linear e infinita */
+  animation: scroll 30s linear infinite; 
+}
+
+/* Define a pausa na interação */
+.slide-track.paused {
+  /* Esta linha é o que pausa a animação de rolagem */
+  animation-play-state: paused;
+}
+
+/* Garante que o cursor mude para indicar que o elemento é clicável */
+.slide-track {
+  cursor: pointer;
+}

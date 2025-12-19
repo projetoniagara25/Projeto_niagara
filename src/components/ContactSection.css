@@ -5,13 +5,14 @@
 
     .left-side{
         padding-left: 2rem;
+
+        align-items: center;
     }
 
-
-    .left-side > div:nth-child(5),.left-side > div:nth-child(1){
-        align-self: center;
-    } 
-
+    .left-side> div:nth-child(2){
+    text-align: center;
+    margin-left: 1.5rem;
+    }
 
     .area-maps{
         padding: 1rem;

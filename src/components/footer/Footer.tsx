@@ -16,7 +16,7 @@ const Footer: React.FC<FooterProps> = ({whatsapp}) => {
         {/* 1. Ícone e Ano da Empresa */}
         <div className="flex flex-col items-start space-y-2">
           {/* Substitua o SVG ou o ícone do componente da sua empresa aqui */}
-          <div className="text-white text-2xl font-bold">
+          <div className="text-white text-2xl font-bold foot-title-lindoia">
             Niágara<span className="text-[#009dc1]">Lindóya</span>
           </div>
           <span className="text-sm">© {currentYear} NiagaraLindóya. Todos os direitos reservados.</span>
@@ -51,7 +51,7 @@ const Footer: React.FC<FooterProps> = ({whatsapp}) => {
         {/* 5. Siga-nos */}
         <div className="followus min-w-max flex flex-col ">
           <h4 className="text-white font-semibold mb-3">Siga-nos</h4>
-          <div className="flex space-x-4 mt-2">
+          <div className="area-social-links-icons flex space-x-4 mt-2">
             <a href="https://facebook.com/703538462849443" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-2xl hover:text-white transition-colors duration-200">
               <FaFacebookF />
             </a>
