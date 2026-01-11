@@ -11,7 +11,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'; // Ícones de Menu e Fechar
 const navItems = [
   { name: 'Início', href: '#main' },
   { name: 'Sobre Nós', href: '#about-us' },
-  { name: 'Niagara', href: '#products' },
+  { name: 'Niágara', href: '#products' },
   { name: 'Porque nos escolher?', href: '#why-chose-us' },
   { name: 'Contato', href: '#contact' },
 ];

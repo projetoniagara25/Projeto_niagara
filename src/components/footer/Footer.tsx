@@ -1,14 +1,18 @@
+'use client'
+
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import PrivacyModal from '@/components/modais/PrivacyModal';
 import './Footer.css'
 
 
 type FooterProps = {
-  whatsapp : string
+  whatsapp: string
 }
-const Footer: React.FC<FooterProps> = ({whatsapp}) => {
+const Footer: React.FC<FooterProps> = ({ whatsapp }) => {
   const currentYear = new Date().getFullYear();
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
 
   return (
     <footer className="bg-[#274651] text-gray-300 py-6">
@@ -43,7 +47,22 @@ const Footer: React.FC<FooterProps> = ({whatsapp}) => {
         <div className="info min-w-max flex flex-col ">
           <h4 className="text-white font-semibold mb-3 ">Informação</h4>
           <ul className="space-y-2">
-            <li><p className="hover:text-white transition-colors duration-200">Termos e Condições</p></li>
+            <li><p className="hover:text-white transition-colors duration-200 cursor-pointer">Termos e Condições</p></li>
+            {/* Link que abre o modal */}
+            <div>
+              <button
+                onClick={() => setIsPrivacyOpen(true)}
+                className="hover:text-white transition-colors duration-200  cursor-pointer"
+              >
+                Política de Privacidade
+              </button>
+            </div>
+
+            {/* Componente do Modal */}
+            <PrivacyModal
+              isOpen={isPrivacyOpen}
+              onClose={() => setIsPrivacyOpen(false)}
+            />
             {/* <li><a href="#" className="hover:text-white transition-colors duration-200">Termos e Condições</a> */}
           </ul>
         </div>
@@ -58,7 +77,7 @@ const Footer: React.FC<FooterProps> = ({whatsapp}) => {
             <a href="https://www.instagram.com/niagara.lindoya" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-white transition-colors duration-200">
               <FaInstagram />
             </a>
-             <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-white transition-colors duration-200">
+            <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-white transition-colors duration-200">
               <FaWhatsapp />
             </a>
           </div>
@@ -69,13 +88,14 @@ const Footer: React.FC<FooterProps> = ({whatsapp}) => {
           <h4 className="text-white font-semibold mb-3">Navegação</h4>
           <ul className="space-y-2">
             <li><Link href={'#about-us'} className="hover:text-white transition-colors duration-200">Sobre nós</Link></li>
-            <li><Link href={'#products'}className="hover:text-white transition-colors duration-200">Produtos</Link></li>
-            <li><Link href={'#why-chose-us'}className="hover:text-white transition-colors duration-200">Porque Nos Escolher ?</Link></li>
-            <li><Link href={'#contact'}className="hover:text-white transition-colors duration-200">Contato</Link></li>
+            <li><Link href={'#products'} className="hover:text-white transition-colors duration-200">Produtos</Link></li>
+            <li><Link href={'#why-chose-us'} className="hover:text-white transition-colors duration-200">Porque Nos Escolher ?</Link></li>
+            <li><Link href={'#contact'} className="hover:text-white transition-colors duration-200">Contato</Link></li>
           </ul>
         </div>
       </div>
     </footer>
+
   );
 };
 
