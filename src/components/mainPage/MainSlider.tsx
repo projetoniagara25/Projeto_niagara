@@ -199,7 +199,7 @@ const MainSlider: React.FC = () => {
                                     href={slide.whatsappLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`inline-flex items-center justify-center border-2 rounded-full mb-12 py-3 px-8 text-lg font-bold
+                                    className={`buton-main inline-flex items-center justify-center border-2 rounded-full mb-12 py-3 px-8 text-lg font-bold
                                         transition-all ease-in-out duration-300 delay-100 hover:scale-105 hover:shadow-xl
                                         ${index === 0 && currentSlide === 0 ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
                                         text-white border-white hover:border-none hover:bg-green-500 hover:text-gray-800 bg-transparent mt-60
@@ -216,7 +216,7 @@ const MainSlider: React.FC = () => {
                             {!slide.isConversionSlide && (
                                 <Link
                                     href={slide.link || "#"}
-                                    className="inline-flex items-center justify-center border-2 rounded-full mb-12 py-3 px-8 text-lg font-bold
+                                    className="buton-main inline-flex items-center justify-center border-2 rounded-full mb-12 py-3 px-8 text-lg font-bold
                                             transition-colors duration-300 hover:scale-105 hover:shadow-xl
                                             text-white border-white hover:bg-white hover:text-gray-800 bg-transparent  mt-60"
                                 >
