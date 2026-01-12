@@ -51,15 +51,18 @@ const GoogleMapsSection: React.FC = () => {
       // Cria a InfoWindow com imagem e link
       const infoWindow = new google.maps.InfoWindow({
         content: `
-          <div style="font-size:14px; display:flex; align-items:center; gap:8px;">
-            <img src="/Niagara_Logo_2.jpg" alt="Logo" style="width:24px;height:24px;border-radius:4px;" />
-            <div>
-              <strong>Nossa Localização</strong><br/>
-              <a href="https://maps.app.goo.gl/HptNCHfnNSpAkQd4A" target="_blank" rel="noopener noreferrer">
-                Ver no Google Maps
-              </a>
-            </div>
-          </div>
+        <div style="font-size:14px; display:flex; align-items:center; gap:8px; color: #000000; -webkit-font-smoothing: antialiased;">
+        <img src="/Niagara_Logo_2.jpg" alt="Logo" style="width:24px;height:24px;border-radius:4px; flex-shrink: 0;" />
+        <div>
+          <strong style="color: #000000; display: block; line-height: 1.2;">Nossa Localização</strong>
+          <a href="https://maps.app.goo.gl/HptNCHfnNSpAkQd4A" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             style="color: #1a73e8; text-decoration: none; font-weight: 600; font-size: 13px;">
+            Ver no Google Maps
+          </a>
+        </div>
+      </div>
         `,
       });
 
