@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useWindowSize } from '../hooks/useWindowSize';
 import Reveal from './Reveal';
+import './ProductCarousel.css'
 
 import produto1 from '../../public/6L.webp'
 import produto2 from '../../public/1.5L.webp'
@@ -145,7 +146,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ whatsapp }) => {
                     ).map((product) => (
                       <div
                         key={product.id}
-                        className="bg-white rounded-t-full shadow-lg flex flex-col items-center p-6 text-center overflow-hidden w-[80%] 
+                        className="card-icon-prod bg-white rounded-t-full shadow-lg flex flex-col items-center p-6 text-center overflow-hidden w-[80%] 
                         "
                       >
                         <Reveal><Image

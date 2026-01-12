@@ -1,32 +1,48 @@
-@media (max-width: 640px){
-    .area-contact{
+@media (max-width: 640px) {
+    .area-contact {
         flex-direction: column;
     }
 
-    .left-side{
+    .left-side {
         padding-left: 2rem;
 
         align-items: center;
     }
 
-    .left-side> div:nth-child(2){
-    text-align: center;
-    margin-left: 1.5rem;
+    .left-side>div:nth-child(2) {
+        text-align: center;
+        margin-left: 1.5rem;
     }
 
-    .area-maps{
+    .area-maps {
         padding: 1rem;
     }
 
-     .maps {
+    .maps {
         width: 95%;
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-.left-side{
+    .left-side {
         margin-right: 3rem;
+    }
+
+
+
+    .info-contact-link {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        span{
+            margin-left: -2rem;
+        }
+    }
+
+    .icon-contact-container{
+        align-items: flex-end;
     }
 
 }

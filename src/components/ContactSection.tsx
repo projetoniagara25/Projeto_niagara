@@ -39,9 +39,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ whatsapp }) => {
 
 
             <Reveal>
-              <div className="flex items-center space-x-4 mb-4">
+              <div className="icon-contact-container flex items-center space-x-4 mb-4">
                 <FaWhatsapp className="text-3xl text-green-500" />
-                <div>
+                <div className='info-contact-link'>
                   <span className="font-semibold text-gray-800">WhatsApp</span>
                   <p className="text-gray-600">
                     <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="hover:underline">
@@ -54,9 +54,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ whatsapp }) => {
 
 
             <Reveal>
-              <div className="flex items-center space-x-4 mb-8">
+              <div className="icon-contact-container flex items-center space-x-4 mb-8">
                 <FaEnvelope className="text-3xl text-gray-500" />
-                <div>
+                <div className='info-contact-link'>
                   <span className="font-semibold text-gray-800">E-mail</span>
                   <p className="text-gray-600">
                     <a href={`mailto:atendimento@niagaralindoya.com`} className="hover:underline">
