@@ -12,7 +12,7 @@ const navItems = [
   { name: 'Início', href: '#main' },
   { name: 'Sobre Nós', href: '#about-us' },
   { name: 'Niágara', href: '#products' },
-  { name: 'Por que nos escolher?', href: '#why-chose-us' },F
+  { name: 'Por que nos escolher?', href: '#why-chose-us' },
   { name: 'Contato', href: '#contact' },
 ];
 
