@@ -1,9 +1,6 @@
 // src/components/InstagramFeed.jsx
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
-
-const ACCESS_TOKEN = process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN;
-const USER_ID = process.env.NEXT_PUBLIC_INSTAGRAM_USER_ID; 
+import React, { useState, useEffect, useRef } from 'react'; 
 
 export default function InstagramFeed() {
   const [posts, setPosts] = useState([]);
@@ -15,36 +12,38 @@ export default function InstagramFeed() {
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
-    const fields = 'id,caption,media_url,timestamp,permalink,media_type';
-    const API_URL = `https://graph.instagram.com/v19.0/${USER_ID}/media?fields=${fields}&access_token=${ACCESS_TOKEN}`;
+  async function fetchInstagramPosts() {
+    try {
+      const response = await fetch('/api/instagram'); 
+      
+      // 1. Checa se o conteúdo que voltou é realmente um JSON
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        // Se for HTML (erro 404/500 da Vercel), pegamos o texto para debugar
+        const htmlError = await response.text(); 
+        console.error("Recebido HTML em vez de JSON:", htmlError);
+        throw new Error("Erro no servidor: A rota retornou uma página HTML.");
+      }
 
-    async function fetchInstagramPosts() {
-      if (!ACCESS_TOKEN || !USER_ID) {
-        setError('Configuração ausente.');
-        setIsLoading(false);
-        return;
-      }
-      
-      try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error('Erro na API');
-        
-        const data = await response.json();
-        const onlyImages = data.data.filter(
-          (p) => p.media_type === 'IMAGE' || p.media_type === 'CAROUSEL_ALBUM'
-        );
-        
-        const displayPosts = onlyImages.slice(0, 6);
-        // Triplicamos para garantir que o loop infinito não tenha vácuos
-        setPosts([...displayPosts, ...displayPosts, ...displayPosts]); 
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchInstagramPosts();
-  }, []);
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.error || 'Erro ao carregar');
+
+      const onlyImages = data.data.filter(
+        (p) => p.media_type === 'IMAGE' || p.media_type === 'CAROUSEL_ALBUM'
+      );
+      
+      const displayPosts = onlyImages.slice(0, 6);
+      setPosts([...displayPosts, ...displayPosts, ...displayPosts]); 
+    } catch (err) {
+      console.error("Erro no Frontend:", err);
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+  fetchInstagramPosts();
+}, []);
 
   const handleTouchStart = () => {
     // Para o timer se o usuário tocar novamente
