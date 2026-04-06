@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import "./GoogleMapsSection.css";
 
-const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
+const API_KEY = process.env.GOOGLE_MAPS_API_KEY || "";
 
 const GoogleMapsSection: React.FC = () => {
   const mapRef = useRef<HTMLDivElement | null>(null);
